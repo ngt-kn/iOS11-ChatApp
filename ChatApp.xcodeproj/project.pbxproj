@@ -14,6 +14,9 @@
 		A616F37E20BF899B0017145E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A616F37D20BF899B0017145E /* Assets.xcassets */; };
 		A616F38120BF899B0017145E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A616F37F20BF899B0017145E /* LaunchScreen.storyboard */; };
 		A616F38920BF8AB50017145E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A616F38820BF8AB50017145E /* GoogleService-Info.plist */; };
+		A6EFCD7720BF9987002FF18B /* SnapsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFCD7620BF9987002FF18B /* SnapsTableViewCell.swift */; };
+		A6EFCD7920BF99D3002FF18B /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFCD7820BF99D3002FF18B /* SnapsTableViewController.swift */; };
+		A6EFCD7B20BF9C44002FF18B /* SelectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFCD7A20BF9C44002FF18B /* SelectPictureViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		A616F38020BF899B0017145E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A616F38220BF899B0017145E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A616F38820BF8AB50017145E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A6EFCD7620BF9987002FF18B /* SnapsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsTableViewCell.swift; sourceTree = "<group>"; };
+		A6EFCD7820BF99D3002FF18B /* SnapsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
+		A6EFCD7A20BF9C44002FF18B /* SelectPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPictureViewController.swift; sourceTree = "<group>"; };
 		C98AD412CD828C6630A7F67B /* Pods_ChatApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ChatApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5C3EB3F1CB5CE68E93889B1 /* Pods-ChatApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ChatApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -86,6 +92,7 @@
 			children = (
 				A616F37F20BF899B0017145E /* LaunchScreen.storyboard */,
 				A616F37A20BF89970017145E /* Main.storyboard */,
+				A6EFCD7620BF9987002FF18B /* SnapsTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -94,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				A616F37820BF89970017145E /* LoginViewController.swift */,
+				A6EFCD7820BF99D3002FF18B /* SnapsTableViewController.swift */,
+				A6EFCD7A20BF9C44002FF18B /* SelectPictureViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -227,6 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A616F37920BF89970017145E /* LoginViewController.swift in Sources */,
+				A6EFCD7920BF99D3002FF18B /* SnapsTableViewController.swift in Sources */,
+				A6EFCD7720BF9987002FF18B /* SnapsTableViewCell.swift in Sources */,
+				A6EFCD7B20BF9C44002FF18B /* SelectPictureViewController.swift in Sources */,
 				A616F37720BF89970017145E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
