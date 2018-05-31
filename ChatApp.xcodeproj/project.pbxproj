@@ -15,6 +15,7 @@
 		A616F38120BF899B0017145E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A616F37F20BF899B0017145E /* LaunchScreen.storyboard */; };
 		A616F38920BF8AB50017145E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A616F38820BF8AB50017145E /* GoogleService-Info.plist */; };
 		A6488D7F20C0600800F79278 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6488D7E20C0600800F79278 /* ContactTableViewController.swift */; };
+		A6488D8120C06C7F00F79278 /* SnapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6488D8020C06C7F00F79278 /* SnapViewController.swift */; };
 		A6EFCD7720BF9987002FF18B /* SnapsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFCD7620BF9987002FF18B /* SnapsTableViewCell.swift */; };
 		A6EFCD7920BF99D3002FF18B /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFCD7820BF99D3002FF18B /* SnapsTableViewController.swift */; };
 		A6EFCD7B20BF9C44002FF18B /* SelectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFCD7A20BF9C44002FF18B /* SelectPictureViewController.swift */; };
@@ -31,6 +32,7 @@
 		A616F38220BF899B0017145E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A616F38820BF8AB50017145E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A6488D7E20C0600800F79278 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
+		A6488D8020C06C7F00F79278 /* SnapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapViewController.swift; sourceTree = "<group>"; };
 		A6EFCD7620BF9987002FF18B /* SnapsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsTableViewCell.swift; sourceTree = "<group>"; };
 		A6EFCD7820BF99D3002FF18B /* SnapsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
 		A6EFCD7A20BF9C44002FF18B /* SelectPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPictureViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				A6EFCD7820BF99D3002FF18B /* SnapsTableViewController.swift */,
 				A6EFCD7A20BF9C44002FF18B /* SelectPictureViewController.swift */,
 				A6488D7E20C0600800F79278 /* ContactTableViewController.swift */,
+				A6488D8020C06C7F00F79278 /* SnapViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -198,6 +201,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-ChatApp/Pods-ChatApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -205,6 +209,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -242,6 +247,7 @@
 				A6EFCD7920BF99D3002FF18B /* SnapsTableViewController.swift in Sources */,
 				A6488D7F20C0600800F79278 /* ContactTableViewController.swift in Sources */,
 				A6EFCD7720BF9987002FF18B /* SnapsTableViewCell.swift in Sources */,
+				A6488D8120C06C7F00F79278 /* SnapViewController.swift in Sources */,
 				A6EFCD7B20BF9C44002FF18B /* SelectPictureViewController.swift in Sources */,
 				A616F37720BF89970017145E /* AppDelegate.swift in Sources */,
 			);
@@ -390,10 +396,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChatApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ngtkn.ChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -408,10 +411,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = ChatApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ngtkn.ChatApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

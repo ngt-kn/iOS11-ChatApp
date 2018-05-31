@@ -127,10 +127,52 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="PAH-v2-B0u" kind="show" identifier="viewSnapSegue" id="Zda-wW-3El"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eQ7-Gh-awh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1992.8" y="26.53673163418291"/>
+        </scene>
+        <!--Snap View Controller-->
+        <scene sceneID="lFh-FR-0sA">
+            <objects>
+                <viewController id="PAH-v2-B0u" customClass="SnapViewController" customModule="ChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ree-qT-yWE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Q3n-Nx-oC9">
+                                <rect key="frame" x="0.0" y="64" width="375" height="542"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="fsfs sfSFW FSE FEESFFSD  FSFFWQRE EREWRWE  WEREWR  WERR  WERER  W ER" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ni-CG-X16">
+                                <rect key="frame" x="10" y="612" width="355" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="AWE-30-z20" firstAttribute="trailing" secondItem="1ni-CG-X16" secondAttribute="trailing" constant="10" id="6ZG-D7-GxI"/>
+                            <constraint firstItem="Q3n-Nx-oC9" firstAttribute="top" secondItem="AWE-30-z20" secondAttribute="top" id="CWO-6M-FIh"/>
+                            <constraint firstItem="AWE-30-z20" firstAttribute="trailing" secondItem="Q3n-Nx-oC9" secondAttribute="trailing" id="Gu7-bB-jDw"/>
+                            <constraint firstItem="1ni-CG-X16" firstAttribute="leading" secondItem="AWE-30-z20" secondAttribute="leading" constant="10" id="MmQ-dw-idZ"/>
+                            <constraint firstItem="1ni-CG-X16" firstAttribute="top" secondItem="Q3n-Nx-oC9" secondAttribute="bottom" constant="10" id="jmM-qr-pC2"/>
+                            <constraint firstItem="Q3n-Nx-oC9" firstAttribute="leading" secondItem="AWE-30-z20" secondAttribute="leading" id="mVX-Z9-nHH"/>
+                            <constraint firstItem="AWE-30-z20" firstAttribute="bottom" secondItem="1ni-CG-X16" secondAttribute="bottom" constant="10" id="nEl-Ch-Xyo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="AWE-30-z20"/>
+                    </view>
+                    <connections>
+                        <outlet property="imsgeView" destination="Q3n-Nx-oC9" id="puT-HU-zJu"/>
+                        <outlet property="messageLabel" destination="1ni-CG-X16" id="od5-pf-S0D"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QIc-hc-KRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992.8" y="765.06746626686663"/>
         </scene>
         <!--Select Picture View Controller-->
         <scene sceneID="zaZ-qu-RiU">

@@ -83,7 +83,7 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
                             // Segue to next controller
                             imageRef.downloadURL(completion: { (url, error) in
                                 if error != nil {
-                                    print(error?.localizedDescription)
+                                    print(error?.localizedDescription as Any)
                                 } else {
                                     let downloadURL = url?.absoluteString
                                     self.performSegue(withIdentifier: "sendMessageSegue", sender: downloadURL)
