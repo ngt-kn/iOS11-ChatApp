@@ -14,6 +14,7 @@
 		A616F37E20BF899B0017145E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A616F37D20BF899B0017145E /* Assets.xcassets */; };
 		A616F38120BF899B0017145E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A616F37F20BF899B0017145E /* LaunchScreen.storyboard */; };
 		A616F38920BF8AB50017145E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A616F38820BF8AB50017145E /* GoogleService-Info.plist */; };
+		A6488D7F20C0600800F79278 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6488D7E20C0600800F79278 /* ContactTableViewController.swift */; };
 		A6EFCD7720BF9987002FF18B /* SnapsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFCD7620BF9987002FF18B /* SnapsTableViewCell.swift */; };
 		A6EFCD7920BF99D3002FF18B /* SnapsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFCD7820BF99D3002FF18B /* SnapsTableViewController.swift */; };
 		A6EFCD7B20BF9C44002FF18B /* SelectPictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6EFCD7A20BF9C44002FF18B /* SelectPictureViewController.swift */; };
@@ -29,6 +30,7 @@
 		A616F38020BF899B0017145E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A616F38220BF899B0017145E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A616F38820BF8AB50017145E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A6488D7E20C0600800F79278 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
 		A6EFCD7620BF9987002FF18B /* SnapsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsTableViewCell.swift; sourceTree = "<group>"; };
 		A6EFCD7820BF99D3002FF18B /* SnapsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsTableViewController.swift; sourceTree = "<group>"; };
 		A6EFCD7A20BF9C44002FF18B /* SelectPictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPictureViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				A616F37820BF89970017145E /* LoginViewController.swift */,
 				A6EFCD7820BF99D3002FF18B /* SnapsTableViewController.swift */,
 				A6EFCD7A20BF9C44002FF18B /* SelectPictureViewController.swift */,
+				A6488D7E20C0600800F79278 /* ContactTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			files = (
 				A616F37920BF89970017145E /* LoginViewController.swift in Sources */,
 				A6EFCD7920BF99D3002FF18B /* SnapsTableViewController.swift in Sources */,
+				A6488D7F20C0600800F79278 /* ContactTableViewController.swift in Sources */,
 				A6EFCD7720BF9987002FF18B /* SnapsTableViewCell.swift in Sources */,
 				A6EFCD7B20BF9C44002FF18B /* SelectPictureViewController.swift in Sources */,
 				A616F37720BF89970017145E /* AppDelegate.swift in Sources */,

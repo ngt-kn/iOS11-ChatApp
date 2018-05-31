@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import FirebaseStorage
 
 class SelectPictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var messageTextField: UITextField!
     
     var imagePicker : UIImagePickerController?
+    var imageAdded = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +23,30 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
         imagePicker?.delegate = self
     }
 
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
+            imageView.image = image
+            imageAdded = true
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func presentAlert(message: String){
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Okay", style: .default) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
 
+    
     @IBAction func cameraPressed(_ sender: UIBarButtonItem) {
         if imagePicker != nil {
             imagePicker?.sourceType = .camera
@@ -34,19 +59,54 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
             present(imagePicker!, animated: true, completion: nil)
         }
     }
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage{
-            imageView.image = image
-        }
-        dismiss(animated: true, completion: nil)
-    }
+
     @IBAction func nextButtonPressed(_ sender: UIButton) {
+        
+        // Delete this before production
+        messageTextField.text = "test"
+        imageAdded = true
+        
+        if let message = messageTextField.text {
+            if imageAdded && message != "" {
+                // Upload the image to firebase storage
+                
+                let imagesFolder = Storage.storage().reference().child("images")
+                
+                if let image = imageView.image {
+                    let imageData = UIImageJPEGRepresentation(image, 0.1)
+                    let imageRef = imagesFolder.child("\(NSUUID().uuidString).jpg")
+                    
+                    imageRef.putData(imageData!, metadata: nil) { (metadata, error) in
+                        if let error = error {
+                            self.presentAlert(message: error.localizedDescription)
+                        } else {
+                            // Segue to next controller
+                            imageRef.downloadURL(completion: { (url, error) in
+                                if error != nil {
+                                    print(error?.localizedDescription)
+                                } else {
+                                    let downloadURL = url?.absoluteString
+                                    self.performSegue(withIdentifier: "sendMessageSegue", sender: downloadURL)
+                                }
+                            })
+                        }
+                    }
+                }
+            } else {
+                // error
+                presentAlert(message: "Please select a picture and enter a vaild message")
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let downloadURL = sender as? String{
+            if let sendVC = segue.destination as? ContactTableViewController{
+                sendVC.downloadURL = downloadURL
+                sendVC.messageDescription = messageTextField.text!
+            }
+        }
+        
     }
     
 }
