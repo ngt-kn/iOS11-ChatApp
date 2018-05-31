@@ -15,6 +15,7 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
     
     var imagePicker : UIImagePickerController?
     var imageAdded = false
+    var imageName = "\(NSUUID().uuidString).jpg"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,13 +47,13 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
         present(alert, animated: true, completion: nil)
     }
 
-    
     @IBAction func cameraPressed(_ sender: UIBarButtonItem) {
         if imagePicker != nil {
             imagePicker?.sourceType = .camera
             present(imagePicker!, animated: true, completion: nil)
         }
     }
+    
     @IBAction func selectPhotoPressed(_ sender: UIBarButtonItem) {
         if imagePicker != nil {
             imagePicker?.sourceType = .photoLibrary
@@ -61,11 +62,6 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
     }
 
     @IBAction func nextButtonPressed(_ sender: UIButton) {
-        
-        // Delete this before production
-        messageTextField.text = "test"
-        imageAdded = true
-        
         if let message = messageTextField.text {
             if imageAdded && message != "" {
                 // Upload the image to firebase storage
@@ -74,7 +70,7 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
                 
                 if let image = imageView.image {
                     let imageData = UIImageJPEGRepresentation(image, 0.1)
-                    let imageRef = imagesFolder.child("\(NSUUID().uuidString).jpg")
+                    let imageRef = imagesFolder.child(imageName)
                     
                     imageRef.putData(imageData!, metadata: nil) { (metadata, error) in
                         if let error = error {
@@ -104,6 +100,7 @@ class SelectPictureViewController: UIViewController, UIImagePickerControllerDele
             if let sendVC = segue.destination as? ContactTableViewController{
                 sendVC.downloadURL = downloadURL
                 sendVC.messageDescription = messageTextField.text!
+                sendVC.imageName = imageName
             }
         }
         

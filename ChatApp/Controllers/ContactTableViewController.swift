@@ -14,6 +14,7 @@ class ContactTableViewController: UITableViewController {
     
     var downloadURL = ""
     var messageDescription = ""
+    var imageName = ""
     var users : [User] = []
 
     override func viewDidLoad() {
@@ -54,9 +55,8 @@ class ContactTableViewController: UITableViewController {
         let user = users[indexPath.row]
         
         if let fromEmail = Auth.auth().currentUser?.email{
-            let snap = ["from":fromEmail,"description":messageDescription,"imageURL":downloadURL]
-            Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)
-            
+            let snap = ["from":fromEmail,"description":messageDescription,"imageURL":downloadURL,"imageName":imageName]
+            Database.database().reference().child("users").child(user.uid).child("snaps").childByAutoId().setValue(snap)          
             navigationController?.popToRootViewController(animated: true)
         }
     }

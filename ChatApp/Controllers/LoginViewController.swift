@@ -18,16 +18,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var bottomButton: UIButton!
     
     var signupMode = false
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     func presentAlert(message: String){
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
-        
         let action = UIAlertAction(title: "Okay", style: .default) { (action) in
             alert.dismiss(animated: true, completion: nil)
         }
